@@ -1,0 +1,54 @@
+@page
+@model RazorPagesMusic.Pages.AfroMusic.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>AfroMusic</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="AfroMusic.Title" class="control-label"></label>
+                <input asp-for="AfroMusic.Title" class="form-control" />
+                <span asp-validation-for="AfroMusic.Title" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AfroMusic.Artist" class="control-label"></label>
+                <input asp-for="AfroMusic.Artist" class="form-control" />
+                <span asp-validation-for="AfroMusic.Artist" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AfroMusic.Genre" class="control-label"></label>
+                <input asp-for="AfroMusic.Genre" class="form-control" />
+                <span asp-validation-for="AfroMusic.Genre" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AfroMusic.Country" class="control-label"></label>
+                <input asp-for="AfroMusic.Country" class="form-control" />
+                <span asp-validation-for="AfroMusic.Country" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AfroMusic.ReleaseDate" class="control-label"></label>
+                <input asp-for="AfroMusic.ReleaseDate" class="form-control" />
+                <span asp-validation-for="AfroMusic.ReleaseDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
