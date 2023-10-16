@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
-using RazorPagesMovie.Models;
+using RazorPagesMusic.Models;
 
 namespace RazorPagesMusic.Data
 {
@@ -14,6 +14,6 @@ namespace RazorPagesMusic.Data
         {
         }
 
-        public DbSet<RazorPagesMovie.Models.Music> AfroMusic { get; set; } = default!;
+        public DbSet<RazorPagesMusic.Models.Music> AfroMusic { get; set; } = default!;
     }
 }

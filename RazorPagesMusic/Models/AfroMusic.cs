@@ -1,6 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 
-namespace RazorPagesMovie.Models;
+namespace RazorPagesMusic.Models;
 
 public class Music
 {

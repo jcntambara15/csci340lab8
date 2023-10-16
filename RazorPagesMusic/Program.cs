@@ -1,6 +1,8 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using RazorPagesMusic.Data;
+using RazorPagesMusic.Models;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -9,6 +11,13 @@ builder.Services.AddDbContext<RazorPagesMusicContext>(options =>
     options.UseSqlite(builder.Configuration.GetConnectionString("RazorPagesMusicContext") ?? throw new InvalidOperationException("Connection string 'RazorPagesMusicContext' not found.")));
 
 var app = builder.Build();
+
+using (var scope = app.Services.CreateScope())
+{
+    var services = scope.ServiceProvider;
+
+    SeedData.Initialize(services);
+}
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
